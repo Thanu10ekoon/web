@@ -16,7 +16,6 @@ function App() {
       <div className="App">
         <Navbar />
         <Routes>  {/* Use Routes instead of Switch */}
-          {/* Define routes for Home and About pages */}
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/universitylife" element={<UniversityLife />} />
@@ -24,7 +23,6 @@ function App() {
           <Route path="/volun" element={<Volu />} />
           <Route path="/skills" element={<Skills />} />
           <Route path="/contact" element={<Contact />} />
-          {/* Optionally, set a default route to Home */}
           <Route path="/" element={<Home />} />
         </Routes>
       </div>

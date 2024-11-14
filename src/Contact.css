@@ -1,0 +1,136 @@
+/* Home.css */
+
+.home-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+  }
+  
+  /* Background video styling */
+.background-video {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+object-fit: cover;
+z-index: -1;
+opacity: 0.8;
+filter: brightness(0.5);
+}
+
+/* Centered content styling */
+.content {
+background-color: rgba(0, 0, 0, 0.7);
+padding: 3rem;
+border-radius: 12px;
+max-width: 500px;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+z-index: 1;
+text-align: center;
+}
+
+/* Contact form styling */
+.contact-form {
+display: flex;
+flex-direction: column;
+gap: 1.2rem;
+}
+.contact-form label {
+color: #00e6e6;
+font-weight: bold;
+font-size: 1.1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+background-color: rgba(255, 255, 255, 0.1);
+border: 1px solid #00e6e6;
+border-radius: 8px;
+padding: 10px;
+font-size: 1rem;
+color: #e0e0e0;
+resize: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+outline: none;
+border-color: #00b3b3;
+}
+
+.contact-form button {
+background-color: #00e6e6;
+color: #333;
+font-size: 1rem;
+font-weight: bold;
+border: none;
+border-radius: 8px;
+padding: 12px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+background-color: #00b3b3;
+}
+
+/* Footer styling */
+.footer {
+width: 100%;
+background-color: #222;
+color: #fff;
+padding: 0.5rem 0;
+margin-top: 2rem;
+}
+
+.footer-content {
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+}
+
+.social-links {
+display: flex;
+gap: 1rem;
+align-items: center;
+margin-top: 0.5rem;
+}
+
+.social-links a {
+color: #fff;
+text-decoration: none;
+display: flex;
+align-items: center;
+transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+color: #00e6e6;
+}
+
+.social-links .username {
+margin-left: 8px;
+font-size: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+.content {
+    padding: 2rem;
+}
+.contact-form label {
+    font-size: 1rem;
+}
+.contact-form input,
+.contact-form textarea {
+    font-size: 0.9rem;
+}
+}

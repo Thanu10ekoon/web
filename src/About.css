@@ -1,0 +1,254 @@
+/* About.css */
+
+/* Ensure the container takes up the full height of the viewport */
+.about-container {
+    min-height: 100vh;  /* Make sure it spans the entire height */
+    position: relative;  /* Allow content to be placed on top */
+    padding: 40px;
+    font-family: Arial, sans-serif;
+    color: #333;
+    text-align: center;
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* Ensure video covers the entire background */
+    z-index: -1; /* Keep the video behind content */
+}
+
+.badge img {
+    width: 154px;
+    height: 150px;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 1rem;
+  }
+
+.badge1 img {
+    width: 140px;
+    height: 160px;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 1rem;
+  }
+
+  .badge3 img {
+    margin: 10px;
+    width: 125px;
+    height: 165px;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 1rem;
+  }
+h1 {
+    font-family: 'Franklin Gothic Medium';
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color:powderblue;
+}
+
+h2 {
+    font-family:'Times New Roman', Times, serif;
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+    color:aqua;
+}
+
+h3 {
+    font-family:'Times New Roman', Times, serif;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color:powderblue;
+}
+.timeline {
+    position: relative;
+    padding-left: 30px;
+    padding-top: 20px;  /* Ensure there's space at the top for the title */
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideIn 0.8s forwards;
+    width: 100%;
+    position: relative;  /* Allow stacking of content */
+}
+
+.timeline-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.timeline-dot {
+    width: 30px;
+    height: 30px;
+    background-color: aqua;
+    border-radius: 50%;
+    margin-right: 20px;
+    z-index: 1;
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+    margin-right: 0;
+    margin-left: 20px;
+}
+
+.timeline-content {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 60%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.timeline-content h3 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5rem;
+    color:aqua;
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.15rem;
+    color: antiquewhite;
+}
+
+/* Add a delay to each item so they appear one by one */
+.timeline-item:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.timeline-item:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.timeline-item:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.timeline-item:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+.timeline-item:nth-child(5) {
+    animation-delay: 1s;
+}
+
+/* Animation for slide-in effect */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .timeline-content {
+        max-width: 90%;
+    }
+
+    .timeline-item {
+        flex-direction: column;
+    }
+
+    .timeline-dot {
+        margin-bottom: 15px;
+    }
+
+    .timeline-item:nth-child(even) {
+        flex-direction: column;
+    }
+}
+
+/* Footer Styles */
+.footer {
+    width: 100%; /* Ensure the footer spans the full width */
+    background-color: rgba(51, 51, 51, 0.6);
+    color: #fff;
+    padding: 1rem 0; /* Adjusted padding for better spacing */
+    position: absolute; /* Positioned at the bottom */
+    bottom: 0;
+    left: 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 0.5rem; /* Reduced space between icons and usernames */
+}
+
+.social-links a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.social-links a:hover {
+    color: #007bff;
+}
+
+.social-links .username {
+    margin-left: 8px;
+    font-size: 1rem;
+    color: #e0e0e0;
+}
+
+.email-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 0.5rem; /* Reduced space for email section */
+}
+
+.email-links p {
+    margin: 0;
+    font-size: 1rem;
+    color: #e0e0e0;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .footer-content {
+        padding: 0 1rem; /* Add padding on the sides for better alignment */
+    }
+
+    .social-links {
+        flex-direction: column; /* Stack icons and usernames vertically */
+        gap: 10px; /* Reduced gap between items */
+        margin-bottom: 1rem;
+    }
+
+    .social-links .username {
+        margin-left: 0; /* Remove margin on small screens */
+        font-size: 0.9rem; /* Slightly smaller text size */
+        text-align: center; /* Align text to the center */
+    }
+
+    .email-links {
+        flex-direction: column; /* Stack email addresses vertically */
+        gap: 10px; /* Reduced gap between email links */
+    }
+}

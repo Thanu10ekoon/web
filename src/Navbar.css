@@ -1,0 +1,84 @@
+/* Default Navbar styles for desktop */
+.navbar {
+  background-color: rgba(51, 51, 51, 0.7);
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 2;
+}
+  
+  .navbar-list {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar-list li {
+    margin: 0 1.5rem;
+  }
+  
+  .navbar-list li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  
+  .navbar-list li a:hover {
+    color: #ddd;
+  }
+  
+  /* Menu button styling for mobile */
+  .menu-button {
+    display: none;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+  
+  .menu-icon {
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+  }
+  
+  .menu-text {
+    font-size: 1rem;
+  }
+  
+  /* Mobile dropdown styles */
+  @media (max-width: 768px) {
+    .navbar-list {
+      display: none; /* Hide navbar items by default on mobile */
+      flex-direction: column;
+      background-color: rgba(51, 51, 51, 0.9);
+      width: 100%;
+      padding: 1rem;
+      position: absolute;
+      top: 100%; /* Position below the menu button */
+      left: 0;
+    }
+  
+    .navbar-list.open {
+      display: flex; /* Show menu when open */
+    }
+  
+    .navbar-list li {
+      margin: 0.5rem 0; /* Space between each item */
+    }
+  
+    .menu-button {
+      display: flex;
+      justify-content: center;
+      width: 70%;
+      margin-left:-15px; 
+    }
+  }
+  

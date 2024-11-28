@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>Site Map</title>
+    <link href="https://thanu10ekoon.github.io/web/" rel="self"/>
+    <updated>2024-11-18T14:34:06+00:00</updated>
+    <id>https://thanu10ekoon.github.io/web/</id>
+
+    <entry>
+        <id>https://thanu10ekoon.github.io/web/</id>
+        <link href="https://thanu10ekoon.github.io/web/"/>
+        <updated>2024-11-18T14:34:06+00:00</updated>
+    </entry>
+    <entry>
+        <id>https://thanu10ekoon.github.io/web/#/home</id>
+        <link href="https://thanu10ekoon.github.io/web/#/home"/>
+        <updated>2024-11-18T14:34:06+00:00</updated>
+    </entry>
+    <entry>
+        <id>https://thanu10ekoon.github.io/web/#/about</id>
+        <link href="https://thanu10ekoon.github.io/web/#/about"/>
+        <updated>2024-11-18T14:34:06+00:00</updated>
+    </entry>
+    <entry>
+        <id>https://thanu10ekoon.github.io/web/#/universitylife</id>
+        <link href="https://thanu10ekoon.github.io/web/#/universitylife"/>
+        <updated>2024-11-18T14:34:06+00:00</updated>
+    </entry>
+    <entry>
+        <id>https://thanu10ekoon.github.io/web/#/scllife</id>
+        <link href="https://thanu10ekoon.github.io/web/#/scllife"/>
+        <updated>2024-11-18T14:34:06+00:00</updated>
+    </entry>
+    <entry>
+        <id>https://thanu10ekoon.github.io/web/#/volun</id>
+        <link href="https://thanu10ekoon.github.io/web/#/volun"/>
+        <updated>2024-11-18T14:34:06+00:00</updated>
+    </entry>
+    <entry>
+        <id>https://thanu10ekoon.github.io/web/#/skills</id>
+        <link href="https://thanu10ekoon.github.io/web/#/skills"/>
+        <updated>2024-11-18T14:34:06+00:00</updated>
+    </entry>
+    <entry>
+        <id>https://thanu10ekoon.github.io/web/#/contact</id>
+        <link href="https://thanu10ekoon.github.io/web/#/contact"/>
+        <updated>2024-11-18T14:34:06+00:00</updated>
+    </entry>
+</feed>
+<!--  -->

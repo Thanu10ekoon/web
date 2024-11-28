@@ -3,6 +3,7 @@ import './Home.css';
 import profileImage from './images/propic.jpg'; // Replace with actual path
 import backgroundVideo from './images/back.mp4'; // Replace with actual path
 
+
 // Add imports for icons (assuming you use a library like FontAwesome)
 import { FaGithub, FaFacebook, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
 

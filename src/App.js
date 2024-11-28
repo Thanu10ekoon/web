@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Import Routes instead of Switch
+import { HashRouter as Router, Route, Routes } from 'react-router-dom'; // Import Routes instead of Switch
 import Navbar from './Navbar';
 import Home from './Home';
 import About from './About'; // Import the About component
@@ -10,8 +10,11 @@ import Skills from './skills';
 import Contact from './contact';
 
 
+import './Home.css';
+
 function App() {
   return (
+    
     <Router>
       <div className="App">
         <Navbar />
@@ -26,6 +29,8 @@ function App() {
           <Route path="/" element={<Home />} />
         </Routes>
       </div>
+
+
     </Router>
   );
 }

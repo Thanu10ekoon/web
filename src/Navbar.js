@@ -18,11 +18,11 @@ function Navbar() {
       <ul className={`navbar-list ${isOpen ? 'open' : ''}`}>
         <li><Link to="/home">Home</Link></li>
         <li><Link to="/about">About</Link></li> {/* Link to About page */}
-        <li><a href="/universitylife">University Life</a></li>
-        <li><a href="/scllife">School Life</a></li>
-        <li><a href="/volun">Volunteering</a></li>
-        <li><a href="/skills">Skills</a></li>
-        <li><a href="/contact">Contact</a></li>
+        <li><Link to="/universitylife">University Life</Link></li>
+        <li><Link to="/scllife">School Life</Link></li>
+        <li><Link to="/volun">Volunteering</Link></li>
+        <li><Link to="/skills">Skills</Link></li>
+        <li><Link to="/contact">Contact</Link></li>
       </ul>
     </nav>
   );

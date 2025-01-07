@@ -5,8 +5,12 @@ import backgroundVideo from './images/back.mp4';
 import { FaGithub, FaFacebook, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
 
 const images = [
+  { src: require('./uni_images/image19.jpg'), caption: 'BITCODE 2nd Runners Up' },
+  { src: require('./uni_images/image17.jpg'), caption: 'BITCODE 2nd Runners Up' },
+  { src: require('./uni_images/image18.jpg'), caption: 'Melodies of Joy - EFAC Carols Service' },
   { src: require('./uni_images/image0.jpg'), caption: 'යාමයක අරුමැසිය' },
   { src: require('./uni_images/image01.jpg'), caption: 'යාමයක අරුමැසිය' },
+  { src: require('./uni_images/image20.jpg'), caption: 'විභාවි 2023' },
   { src: require('./uni_images/image1.jpg'), caption: 'පිරිත 2024' },
   { src: require('./uni_images/image4.jpg'), caption: 'පිරිත 2024' },
   { src: require('./uni_images/image2.jpg'), caption: 'HaXtreme 3.0' },

@@ -7,6 +7,7 @@ import { FaGithub, FaFacebook, FaLinkedin, FaTwitter, FaEnvelope } from 'react-i
 const images = [
   { src: require('./uni_images/image19.jpg'), caption: 'BITCODE 2nd Runners Up' },
   { src: require('./uni_images/image17.jpg'), caption: 'BITCODE 2nd Runners Up' },
+  { src: require('./uni_images/image21.jpg'), caption: 'විභාවි ගද්‍ය, පද්‍ය අංශ 2 හිම ප්‍රථම ස්තානය' },
   { src: require('./uni_images/image18.jpg'), caption: 'Melodies of Joy - EFAC Carols Service' },
   { src: require('./uni_images/image0.jpg'), caption: 'යාමයක අරුමැසිය' },
   { src: require('./uni_images/image01.jpg'), caption: 'යාමයක අරුමැසිය' },
@@ -27,7 +28,6 @@ const images = [
   { src: require('./uni_images/image14.jpg'), caption: 'Red Cypher 1.0' },
   { src: require('./uni_images/image15.jpg'), caption: 'මෙහෙවර' },
   { src: require('./uni_images/image16.jpg'), caption: 'VoltCast 1.0 Organizing Committee' },
-  // Add more images as needed
 ];
 
 function UniversityLife() {

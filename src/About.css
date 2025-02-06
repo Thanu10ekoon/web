@@ -44,6 +44,15 @@
     border: none;
     margin-bottom: 1rem;
   }
+
+  .badge5 img {
+    margin: 10px;
+    width: 155px;
+    height: 165px;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 1rem;
+  }
 h1 {
     font-family: 'Franklin Gothic Medium';
     font-size: 2.5rem;

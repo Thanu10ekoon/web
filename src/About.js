@@ -58,7 +58,7 @@ function About() {
           <div className="timeline-dot"></div>
           <div className="timeline-content">
             <h3>Kawanthissa M.V - Ampara</h3>
-            <div className="badge4">
+            <div className="badge5">
                 <img src={Badge5} alt="Kawanthissa" />
             </div>
             <p>I started my educational journey at Kawanthissa M.V in Ampara district, where I laid the foundation for my academic growth.Then I had to go to St.Bernadette's Model School in Polagahavela and Bandaranayake Model Primary School respectivaley as my family have moved from Ampara to Polgahawela</p>

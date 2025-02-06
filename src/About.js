@@ -5,6 +5,7 @@ import Badge from './images/annes.png';
 import Badge2 from './images/Maliyadeva.png';
 import Badge3 from './images/ruhuna.gif';
 import Badge4 from './images/efac.png';
+import Badge5 from './images/Kawa.jpg';
 
 import { FaGithub, FaFacebook, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
 
@@ -17,19 +18,28 @@ function About() {
       </video>
       <h1>About Me</h1>
       <div className="timeline">
-        <div className="timeline-item">
+      <div className="timeline-item">
           <div className="timeline-dot"></div>
           <div className="timeline-content">
-            <h3>Born in 2002</h3>
-            <p>This is where my journey began. Born in 2002, I spent first few years of my life in beautiful Ampara district which was a wartone area at that time. But the time in there was exciting with my family.</p>
+            <h2>University of Ruhuna</h2>
+            <h3>Faculty of Engineering</h3>
+            <div className="badge3">
+                <img src={Badge3} alt="Ruhuna_Logo" />
+                <img src={Badge4} alt="EFAC_logo"/>
+            </div>
+            
+            <p>In my first year, I achieved a high OGPA, placing me in the top 50 of my batch. This allowed me to select any discipline I preferred, so I chose the Computer Engineering sub-discipline under the Department of Electrical & Information Engineering, aligning with my passion. Alongside academics, I’m making the most of university life by immersing myself in acting, writing poetry, and volunteering with IEEE.</p>
           </div>
         </div>
         
         <div className="timeline-item">
           <div className="timeline-dot"></div>
           <div className="timeline-content">
-            <h3>Kawanthissa M.V - Ampara</h3>
-            <p>I started my educational journey at Kawanthissa M.V in Ampara district, where I laid the foundation for my academic growth.Then I had to go to St.Bernadette's Model School in Polagahavela and Bandaranayake Model Primary School respectivaley as my family have moved from Ampara to Polgahawela</p>
+            <h3>Maliyadeva College</h3>
+            <div className="badge1">
+                <img src={Badge2} alt="Maliyadeva" />
+            </div>
+            <p>Following high achievements in my G.C.E. O/Ls, I was selected for Maliyadeva College, one of the most prominent school in Sri Lanka. I completed my A/Ls there with top results, earning admission to the Faculty of Engineering at the University of Ruhuna, one of Sri Lanka’s top three engineering faculties. At Maliyadeva, I took on leadership roles as Vice President of the Research Unit and Language Coordinator of the Media Unit, while actively participating in the science, IT, and Buddhist societies.</p>
           </div>
         </div>
 
@@ -47,25 +57,19 @@ function About() {
         <div className="timeline-item">
           <div className="timeline-dot"></div>
           <div className="timeline-content">
-            <h3>Maliyadeva College</h3>
-            <div className="badge1">
-                <img src={Badge2} alt="Maliyadeva" />
+            <h3>Kawanthissa M.V - Ampara</h3>
+            <div className="badge4">
+                <img src={Badge5} alt="Kawanthissa" />
             </div>
-            <p>Following high achievements in my G.C.E. O/Ls, I was selected for Maliyadeva College, one of the most prominent school in Sri Lanka. I completed my A/Ls there with top results, earning admission to the Faculty of Engineering at the University of Ruhuna, one of Sri Lanka’s top three engineering faculties. At Maliyadeva, I took on leadership roles as Vice President of the Research Unit and Language Coordinator of the Media Unit, while actively participating in the science, IT, and Buddhist societies.</p>
+            <p>I started my educational journey at Kawanthissa M.V in Ampara district, where I laid the foundation for my academic growth.Then I had to go to St.Bernadette's Model School in Polagahavela and Bandaranayake Model Primary School respectivaley as my family have moved from Ampara to Polgahawela</p>
           </div>
         </div>
 
         <div className="timeline-item">
           <div className="timeline-dot"></div>
           <div className="timeline-content">
-            <h2>University of Ruhuna</h2>
-            <h3>Faculty of Engineering</h3>
-            <div className="badge3">
-                <img src={Badge3} alt="Ruhuna_Logo" />
-                <img src={Badge4} alt="EFAC_logo"/>
-            </div>
-            
-            <p>In my first year, I achieved a high OGPA, placing me in the top 50 of my batch. This allowed me to select any discipline I preferred, so I chose the Computer Engineering sub-discipline under the Department of Electrical & Information Engineering, aligning with my passion. Alongside academics, I’m making the most of university life by immersing myself in acting, writing poetry, and volunteering with IEEE.</p>
+            <h3>Born in 2002</h3>
+            <p>This is where my journey began. Born in 2002, I spent first few years of my life in beautiful Ampara district which was a wartone area at that time. But the time in there was exciting with my family.</p>
           </div>
         </div>
       </div>

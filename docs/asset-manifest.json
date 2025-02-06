@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/web/static/css/main.846bb8c5.css",
-    "main.js": "/web/static/js/main.2c8324cf.js",
+    "main.css": "/web/static/css/main.41b6ffc9.css",
+    "main.js": "/web/static/js/main.da6fef8f.js",
     "static/js/453.a5979135.chunk.js": "/web/static/js/453.a5979135.chunk.js",
     "static/media/back.mp4": "/web/static/media/back.638873b3afc31e75f55c.mp4",
     "static/media/11.jpg": "/web/static/media/11.745f4d258448976311f9.jpg",
@@ -10,6 +10,7 @@
     "static/media/1.jpg": "/web/static/media/1.0abe4984ada53bd8fa16.jpg",
     "static/media/image13.jpg": "/web/static/media/image13.7111eacd7b8af68633f4.jpg",
     "static/media/image19.jpg": "/web/static/media/image19.0944fca8880480b0e159.jpg",
+    "static/media/image21.jpg": "/web/static/media/image21.eebc7530b1d53907125f.jpg",
     "static/media/14.png": "/web/static/media/14.6c5ae7c213c03e985e5e.png",
     "static/media/image9.jpg": "/web/static/media/image9.9a5b637a1c8e9a9b8a53.jpg",
     "static/media/12.png": "/web/static/media/12.6dd170f5985b20caf9a8.png",
@@ -55,15 +56,16 @@
     "static/media/6.jpg": "/web/static/media/6.e8fd5ef65640973654ea.jpg",
     "static/media/image81.jpg": "/web/static/media/image81.58e2722e13ea7daf2871.jpg",
     "static/media/10.jpg": "/web/static/media/10.1f407293c54db5139a0d.jpg",
+    "static/media/Kawa.jpg": "/web/static/media/Kawa.ca96616d92ae64dca80a.jpg",
     "static/media/13.png": "/web/static/media/13.9dc864504fe81627b0a0.png",
     "static/media/9.png": "/web/static/media/9.0c64d623afb8c23c6703.png",
     "index.html": "/web/index.html",
-    "main.846bb8c5.css.map": "/web/static/css/main.846bb8c5.css.map",
-    "main.2c8324cf.js.map": "/web/static/js/main.2c8324cf.js.map",
+    "main.41b6ffc9.css.map": "/web/static/css/main.41b6ffc9.css.map",
+    "main.da6fef8f.js.map": "/web/static/js/main.da6fef8f.js.map",
     "453.a5979135.chunk.js.map": "/web/static/js/453.a5979135.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.846bb8c5.css",
-    "static/js/main.2c8324cf.js"
+    "static/css/main.41b6ffc9.css",
+    "static/js/main.da6fef8f.js"
   ]
 }

@@ -5,6 +5,7 @@ import backgroundVideo from './images/back.mp4';
 import { FaGithub, FaFacebook, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
 
 const images = [
+  { src: require('./uni_images/image22.jpg'), caption:'CodeX Champions' },
   { src: require('./uni_images/image19.jpg'), caption: 'BITCODE 2nd Runners Up' },
   { src: require('./uni_images/image17.jpg'), caption: 'BITCODE 2nd Runners Up' },
   { src: require('./uni_images/image21.jpg'), caption: 'විභාවි ගද්‍ය හා පද්‍ය අංශ දෙකෙහිම පළමු ස්ථානය' },

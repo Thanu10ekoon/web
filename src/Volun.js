@@ -6,6 +6,7 @@ import { FaGithub, FaFacebook, FaLinkedin, FaTwitter, FaEnvelope } from 'react-i
 
 const images = [
   { src: require('./Volu_images/1.jpg'), caption: "IEEE Volunteers of the Month for the July' 2024 "},
+  { src: require('./Volu_images/image24.jpg'), caption: "IEEE SB ExCom "},
   { src: require('./Volu_images/2.jpg'), caption: 'Axiom 2.0 Organizing Committee' },
   { src: require('./Volu_images/3.jpg'), caption: 'Eminence 4.0 Organizing Committee' },
   { src: require('./Volu_images/4.jpg'), caption: 'Eminence 4.0' },

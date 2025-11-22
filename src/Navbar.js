@@ -1,30 +1,55 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; // Import Link from React Router
+import React, { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
 
-function Navbar() {
+function Navbar({ links = [] }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [isSolid, setIsSolid] = useState(false);
+  const location = useLocation();
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsSolid(window.scrollY > 40);
+    };
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location.pathname]);
+
+  const toggleMenu = () => setIsOpen((prev) => !prev);
 
   return (
-    <nav className="navbar">
-      <div className="menu-button" onClick={toggleMenu}>
-        <span className="menu-icon">{isOpen ? '▲' : '☰'}</span> {/* Toggle between icons */}
-        <span className="menu-text">MENU</span>
+    <header className={`nav-shell ${isSolid ? 'nav-shell--solid' : ''}`}>
+      <div className="nav-inner app-max-width">
+        <Link to="/home" className="nav-logo" aria-label="Navigate home">
+          <span>Thanujaya</span>
+          <small>Engineer · Storyteller</small>
+        </Link>
+
+        <nav className={`nav-links ${isOpen ? 'nav-links--open' : ''}`} aria-label="Primary navigation">
+          {links.map((item) => (
+            <Link
+              key={item.path}
+              to={item.path}
+              className={location.pathname === item.path ? 'active' : ''}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
+
+        <button className="nav-toggle" onClick={toggleMenu} aria-label="Toggle navigation menu">
+          <span />
+          <span />
+          <span />
+        </button>
       </div>
-      <ul className={`navbar-list ${isOpen ? 'open' : ''}`}>
-        <li><Link to="/home">Home</Link></li>
-        <li><Link to="/about">About</Link></li> {/* Link to About page */}
-        <li><Link to="/universitylife">University Life</Link></li>
-        <li><Link to="/scllife">School Life</Link></li>
-        <li><Link to="/volun">Volunteering</Link></li>
-        <li><Link to="/skills">Skills</Link></li>
-        <li><Link to="/contact">Contact</Link></li>
-      </ul>
-    </nav>
+    </header>
   );
 }
 

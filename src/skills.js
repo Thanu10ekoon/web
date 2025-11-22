@@ -1,154 +1,157 @@
 import React from 'react';
-import './Home.css';
-import backgroundVideo from './images/back.mp4'; // Replace with actual path
-import { FaGithub, FaFacebook, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
+import './skills.css';
+import { useLightbox } from './components/Lightbox';
 
-// Certificate data
 const certificates = [
-    {
+  {
     image: require('./certificates/15.png'),
-    title: 'Programming in Python by University of Moratuwa',
-    verificationUrl: 'https://open.uom.lk/lms/mod/customcert/verify_certificate.php?contextid=39990&code=m1DSExAggt&qrcode=1',
-    credentialId: 'm1DSExAggt'
-    },
-    {
+    title: 'Programming in Python · University of Moratuwa',
+    verificationUrl:
+      'https://open.uom.lk/lms/mod/customcert/verify_certificate.php?contextid=39990&code=m1DSExAggt&qrcode=1',
+    credentialId: 'm1DSExAggt',
+    category: 'Tech'
+  },
+  {
     image: require('./certificates/1.png'),
-    title: 'Data Science & Analysis by HP',
+    title: 'Data Science & Analysis · HP LIFE',
     verificationUrl: 'https://www.life-global.org/certificate/7859ee35-67bd-4b30-9d84-1749465389b9',
-    credentialId: '7859ee35-67bd-4b30-9d84-1749465389b9'
+    credentialId: '7859ee35-67bd-4b30-9d84-1749465389b9',
+    category: 'Tech'
   },
   {
     image: require('./certificates/2.png'),
     title: 'Artificial Intelligence for Social Impact',
     verificationUrl: 'https://elearning-adbi.org/certificate-verifier/?code=108680-172-355-1285',
-    credentialId: '108680-172-355-1285'
+    credentialId: '108680-172-355-1285',
+    category: 'Impact'
   },
   {
     image: require('./certificates/11.png'),
-    title: 'CS50P - Introduction to Programming with Python by Harvard University',
+    title: 'CS50P · Harvard University',
     verificationUrl: 'https://certificates.cs50.io/d0126b33-eb34-4a6d-b909-07b12e59ce73.pdf?size=letter',
-    credentialId: 'd0126b33-eb34-4a6d-b909-07b12e59ce73'
+    credentialId: 'd0126b33-eb34-4a6d-b909-07b12e59ce73',
+    category: 'Tech'
   },
   {
     image: require('./certificates/4.png'),
-    title: 'Introduction to Cyberscurity by Cisco',
+    title: 'Introduction to Cybersecurity · Cisco',
     verificationUrl: 'https://www.credly.com/badges/1126a3d9-9bd4-49e4-9ab1-1e47265384ee/public_url',
-    credentialId: '1126a3d9-9bd4-49e4-9ab1-1e47265384ee'
+    credentialId: '1126a3d9-9bd4-49e4-9ab1-1e47265384ee',
+    category: 'Security'
   },
   {
     image: require('./certificates/5.png'),
     title: 'WIOSEC Short Video Competition',
     verificationUrl: 'NONE',
-    credentialId: 'Participation Certificate Only'
+    credentialId: 'Participation Certificate Only',
+    category: 'Creative'
   },
   {
     image: require('./certificates/6.png'),
-    title: 'C++ Intermediate by SoloLearn',
+    title: 'C++ Intermediate · SoloLearn',
     verificationUrl: 'https://www.sololearn.com/en/certificates/CC-KSHV4R7Z',
-    credentialId: 'CC-KSHV4R7Z'
+    credentialId: 'CC-KSHV4R7Z',
+    category: 'Tech'
   },
   {
     image: require('./certificates/7.png'),
-    title: 'MATLAB Onramp by MathWorks',
-    verificationUrl: 'https://matlabacademy.mathworks.com/progress/share/certificate.html?id=a1ede64b-043f-4614-9dfc-0612b3c97a01&',
-    credentialId: 'a1ede64b-043f-4614-9dfc-0612b3c97a01'
+    title: 'MATLAB Onramp · MathWorks',
+    verificationUrl:
+      'https://matlabacademy.mathworks.com/progress/share/certificate.html?id=a1ede64b-043f-4614-9dfc-0612b3c97a01&',
+    credentialId: 'a1ede64b-043f-4614-9dfc-0612b3c97a01',
+    category: 'Tech'
   },
   {
     image: require('./certificates/8.png'),
     title: 'Sparklink Participation Certificate',
     verificationUrl: 'NONE',
-    credentialId: '-'
+    credentialId: '-',
+    category: 'Creative'
   },
   {
     image: require('./certificates/9.png'),
-    title: 'Introduction to Java by SoloLearn',
+    title: 'Introduction to Java · SoloLearn',
     verificationUrl: 'https://www.sololearn.com/en/certificates/CC-DRYDJUMJ',
-    credentialId: 'CC-DRYDJUMJ'
+    credentialId: 'CC-DRYDJUMJ',
+    category: 'Tech'
   },
   {
     image: require('./certificates/10.png'),
-    title: 'MySQL Tutorial by Great Learning',
+    title: 'MySQL Tutorial · Great Learning',
     verificationUrl: 'https://www.mygreatlearning.com/certificate/KIWUMZCC',
-    credentialId: 'KIWUMZCC'
+    credentialId: 'KIWUMZCC',
+    category: 'Tech'
   },
   {
     image: require('./certificates/3.png'),
-    title: 'Engaging Stakeholders for Success by Cisco',
+    title: 'Engaging Stakeholders for Success · Cisco',
     verificationUrl: 'https://www.credly.com/badges/c3674d69-944f-46ce-8f8d-31572bd89b23/public_url',
-    credentialId: 'c3674d69-944f-46ce-8f8d-31572bd89b23'
+    credentialId: 'c3674d69-944f-46ce-8f8d-31572bd89b23',
+    category: 'Leadership'
   },
   {
     image: require('./certificates/12.png'),
-    title: 'Python for Beginners by University of Moratuwa',
-    verificationUrl: 'https://open.uom.lk/lms/mod/customcert/verify_certificate.php?contextid=4776&code=GP2uvEVwU9&qrcode=1',
-    credentialId: 'GP2uvEVwU9'
+    title: 'Python for Beginners · University of Moratuwa',
+    verificationUrl:
+      'https://open.uom.lk/lms/mod/customcert/verify_certificate.php?contextid=4776&code=GP2uvEVwU9&qrcode=1',
+    credentialId: 'GP2uvEVwU9',
+    category: 'Tech'
   },
   {
     image: require('./certificates/13.png'),
     title: 'PixelCut Participation Certificate',
     verificationUrl: 'https://www.youtube.com/shorts/HoVj8sOaqtE',
-    credentialId: '-'
+    credentialId: '-',
+    category: 'Creative'
   },
   {
     image: require('./certificates/14.png'),
     title: 'MoraXtreme 9.0 Participation Certificate',
     verificationUrl: 'None',
-    credentialId: '-'
-  },
+    credentialId: '-',
+    category: 'Impact'
+  }
 ];
 
 function Skills() {
-  return (
-    <div className="home-container">
-      <video autoPlay loop muted playsInline className="background-video">
-        <source src={backgroundVideo} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+  const openLightbox = useLightbox();
 
-      {/* Certificates Section */}
-      <div className="certificates-section">
-        <h2>Certificates</h2>
-        <div className="certificate-grid">
-          {certificates.map((cert, index) => (
-            <div key={index} className="certificate-card">
-              <img src={cert.image} alt={cert.title} className="certificate-image" />
-              <h3>{cert.title}</h3>
-              <p>Credential ID: {cert.credentialId}</p>
-              <a href={cert.verificationUrl} target="_blank" rel="noopener noreferrer" className="verify-button">
-                Verify Certificate
+  return (
+    <div className="portfolio-page">
+      <section className="section-block glass-panel">
+        <div className="section-heading">
+          <span>Portfolio</span>
+          <h2>Certificates that mirror my curiosity</h2>
+        </div>
+      </section>
+
+      <section className="section-block">
+        <div className="cert-grid">
+          {certificates.map((cert) => (
+            <article key={cert.title} className="cert-card glass-panel">
+              <img
+                src={cert.image}
+                alt={cert.title}
+                className="lightbox-trigger"
+                onClick={() => openLightbox({ src: cert.image, alt: cert.title })}
+              />
+              <div>
+                <span>{cert.category}</span>
+                <h3>{cert.title}</h3>
+                <p>Credential ID: {cert.credentialId}</p>
+              </div>
+              <a
+                href={cert.verificationUrl === 'NONE' || cert.verificationUrl === 'None' ? '#' : cert.verificationUrl}
+                target="_blank"
+                rel="noreferrer noopener"
+                className={cert.verificationUrl === 'NONE' || cert.verificationUrl === 'None' ? 'disabled' : ''}
+              >
+                Verify
               </a>
-            </div>
+            </article>
           ))}
         </div>
-      </div>
-
-      {/* Footer Section */}
-      <footer className="footer">
-        <div className="footer-content">
-          <div className="social-links">
-            <a href="https://github.com/Thanu10ekoon" target="_blank" rel="noopener noreferrer">
-              <FaGithub size={30} />
-              <span className="username">Thanu10ekoon</span>
-            </a>
-            <a href="https://www.facebook.com/thanu.ten.5" target="_blank" rel="noopener noreferrer">
-              <FaFacebook size={30} />
-              <span className="username">Thanujaya Tennekoon</span>
-            </a>
-            <a href="https://www.linkedin.com/in/thanujaya-tennekoon-b9a155271/" target="_blank" rel="noopener noreferrer">
-              <FaLinkedin size={30} />
-              <span className="username">Thanujaya Tennekoon</span>
-            </a>
-            <a href="https://x.com/TTennekoon" target="_blank" rel="noopener noreferrer">
-              <FaTwitter size={30} />
-              <span className="username">@TTennkoon</span>
-            </a>
-            <a href="mailto:thanujayaabtennekoon@gmail.com" target="_blank" rel="noopener noreferrer">
-              <FaEnvelope size={30} />
-              <span className="username">thanujayaabtennekoon@gmail.com</span>
-            </a>
-          </div>
-        </div>
-      </footer>
+      </section>
     </div>
   );
 }

@@ -2,97 +2,157 @@ import React, { useState } from 'react';
 import './UniversityLife.css';
 import backgroundVideo from './images/back.mp4';
 
-import { FaGithub, FaFacebook, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
+import { universityGallery } from './galleryData';
+import { useLightbox } from './components/Lightbox';
 
-const images = [
-  { src: require('./uni_images/image22.jpg'), caption:'CodeX Champions' },
-  { src: require('./uni_images/221.jpg'), caption: 'CodeX Champions' },
-  { src: require('./uni_images/image19.jpg'), caption: 'BITCODE 2nd Runners Up' },
-  { src: require('./uni_images/image17.jpg'), caption: 'BITCODE 2nd Runners Up' },
-  { src: require('./uni_images/image23.jpg'), caption: 'IEEE SB ExCom 24/25' },
-  { src: require('./uni_images/image24.jpg'), caption: 'IEEE SB ExCom 24/25' },
-  { src: require('./uni_images/image21.jpg'), caption: 'විභාවි ගද්‍ය හා පද්‍ය අංශ දෙකෙහිම පළමු ස්ථානය' },
-  { src: require('./uni_images/image20.jpg'), caption: 'විභාවි ගද්‍ය හා පද්‍ය අංශ දෙකෙහිම පළමු ස්ථානය' },
-  { src: require('./uni_images/image18.jpg'), caption: 'Melodies of Joy - EFAC Carols Service' },
-  { src: require('./uni_images/image0.jpg'), caption: 'යාමයක අරුමැසිය' },
-  { src: require('./uni_images/image01.jpg'), caption: 'යාමයක අරුමැසිය' },
-  { src: require('./uni_images/image26.jpg'), caption: 'Drama Crew - පැදුර 2025' },
-  { src: require('./uni_images/image2.jpg'), caption: 'HaXtreme 3.0' },
-  { src: require('./uni_images/image3.jpg'), caption: 'VoltCast 1.0' },
-  { src: require('./uni_images/image5.jpg'), caption: 'Extasis English' },
-  { src: require('./uni_images/image15.jpg'), caption: 'මෙහෙවර' },
-  { src: require('./uni_images/image25.jpg'), caption: 'මෙහෙවර' },
-  { src: require('./uni_images/image14.jpg'), caption: 'Red Cypher 1.0' },
-  { src: require('./uni_images/image6.jpg'), caption: 'Gavel Club' },
-  { src: require('./uni_images/image13.jpg'), caption: 'Eminence 4.0 Organizing Committee' },
-  { src: require('./uni_images/image16.jpg'), caption: 'VoltCast 1.0 Organizing Committee' },
-  { src: require('./uni_images/image12.jpg'), caption: '2nd Semester Lab Group' },
-  { src: require('./uni_images/image8.jpg'), caption: 'Presentation Group' },
-  { src: require('./uni_images/image9.jpg'), caption: 'HaXtreme 2.0' },
-  { src: require('./uni_images/image7.jpg'), caption: '1st Semester Lab Group' },
-  { src: require('./uni_images/image1.jpg'), caption: 'පිරිත 2024' },
-  { src: require('./uni_images/image4.jpg'), caption: 'පිරිත 2024' },
-  { src: require('./uni_images/image10.jpg'), caption: 'භාස Live in Concert' },
-  { src: require('./uni_images/image11.jpg'), caption: 'වැල්ලමඩම පරිශ්‍රය' },
-  
-  
+const storyHighlights = [
+  {
+    title: 'CodeX Champions',
+    description: 'A triumphant sprint with Team 221 — blending algorithms, grit, and friendship.',
+    image: require('./uni_images/221.jpg')
+  },
+  {
+    title: 'BITCODE 2nd Runners Up',
+    description: 'Pushing creative boundaries in back-to-back hackathons with a powerhouse team.',
+    image: require('./uni_images/image19.jpg')
+  },
+  {
+    title: 'IEEE SB ExCom 24/25',
+    description: 'Designing experiences, orchestrating events, and igniting volunteer energy on campus.',
+    image: require('./uni_images/image23.jpg')
+  },
+  {
+    title: 'විභාවි Double Win',
+    description: 'First place in both prose and poetry categories — celebrating language and rhythm.',
+    image: require('./uni_images/image21.jpg')
+  }
+];
+
+const culturalMoments = [
+  {
+    title: 'Melodies of Joy',
+    details: 'EFAC carols that felt like a dream sequence, harmonies echoing through the quad.',
+    image: require('./uni_images/image18.jpg')
+  },
+  {
+    title: 'පැදුර 2025',
+    details: 'Drama crew adventures with costumes, lights, and adrenaline backstage.',
+    image: require('./uni_images/image26.jpg')
+  },
+  {
+    title: 'VoltCast 1.0',
+    details: 'Podcasting about innovation, vulnerability, and campus magic.',
+    image: require('./uni_images/image3.jpg')
+  }
 ];
 
 function UniversityLife() {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [focusIndex, setFocusIndex] = useState(0);
+  const gallery = universityGallery;
+  const openLightbox = useLightbox();
 
-  const nextImage = () => {
-    setCurrentIndex((currentIndex + 1) % images.length);
-  };
-
-  const prevImage = () => {
-    setCurrentIndex((currentIndex - 1 + images.length) % images.length);
-  };
+  const next = () => setFocusIndex((focusIndex + 1) % gallery.length);
+  const prev = () => setFocusIndex((focusIndex - 1 + gallery.length) % gallery.length);
 
   return (
-    <div className="gallery-container">
-      <video autoPlay loop muted playsInline className="background-video">
-        <source src={backgroundVideo} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div className="image-wrapper">
-        <button className="prev-button" onClick={prevImage}>&#10094;</button>
-        <img src={images[currentIndex].src} alt="Gallery" className="gallery-image" />
-        <button className="next-button" onClick={nextImage}>&#10095;</button>
-      </div>
-      <p className="caption">{images[currentIndex].caption}</p>
-    
-      {/* Footer Section */}
-      <footer className="footer">
-        <div className="footer-content">
-          <div className="social-links">
-            <a href="https://github.com/Thanu10ekoon" target="_blank" rel="noopener noreferrer">
-              <FaGithub size={30} />
-              <span className="username">Thanu10ekoon</span>
-            </a>
-            <a href="https://www.facebook.com/thanu.ten.5" target="_blank" rel="noopener noreferrer">
-              <FaFacebook size={30} />
-              <span className="username">Thanujaya Tennekoon</span>
-            </a>
-            <a href="https://www.linkedin.com/in/thanujaya-tennekoon-b9a155271/" target="_blank" rel="noopener noreferrer">
-              <FaLinkedin size={30} />
-              <span className="username">Thanujaya Tennekoon</span>
-            </a>
-            <a href="https://x.com/TTennekoon" target="_blank" rel="noopener noreferrer">
-              <FaTwitter size={30} />
-              <span className="username">@TTennkoon</span>
-            </a>
-            <a href="mailto:thanujayaabtennekoon@gmail.com" target="_blank" rel="noopener noreferrer">
-              <FaEnvelope size={30} />
-              <span className="username">thanujayaabtennekoon@gmail.com</span>
-            </a>
+    <div className="uni-page">
+      <section className="uni-hero glass-panel">
+        <div className="uni-hero-media">
+          <video autoPlay loop muted playsInline poster={gallery[0]?.src}>
+            <source src={backgroundVideo} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div className="uni-hero-overlay">
+            <button onClick={prev} aria-label="Previous moment">‹</button>
+            {gallery[focusIndex] && (
+              <img
+                src={gallery[focusIndex].src}
+                alt={gallery[focusIndex].label}
+                className="lightbox-trigger"
+                onClick={() => openLightbox({
+                  src: gallery[focusIndex].src,
+                  alt: gallery[focusIndex].label
+                })}
+              />
+            )}
+            <button onClick={next} aria-label="Next moment">›</button>
           </div>
         </div>
-      </footer>
+        <div>
+          <span className="tag-chip">University portfolio</span>
+          <h1>Leadership, art, and engineering colliding daily.</h1>
+          <p className="text-muted">
+            From IEEE halls to poetry slams, my Ruhuna experience is a kaleidoscope of code, theatre, and service. Here’s a curated look at the
+            culture and community that keeps me grounded.
+          </p>
+        </div>
+      </section>
+
+      <section className="section-block">
+        <div className="section-heading">
+          <span>Highlights</span>
+          <h2>Competitive sparks & collaborative wins</h2>
+        </div>
+        <div className="uni-highlight-grid">
+          {storyHighlights.map((story) => (
+            <article key={story.title} className="uni-story-card glass-panel">
+              <img
+                src={story.image}
+                alt={story.title}
+                className="lightbox-trigger"
+                onClick={() => openLightbox({ src: story.image, alt: story.title })}
+              />
+              <h3>{story.title}</h3>
+              <p>{story.description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section-block glass-panel">
+        <div className="section-heading">
+          <span>Culture & expression</span>
+          <h2>Where art meets algorithms</h2>
+        </div>
+        <div className="uni-culture-grid">
+          {culturalMoments.map((moment) => (
+            <article key={moment.title}>
+              <img
+                src={moment.image}
+                alt={moment.title}
+                className="lightbox-trigger"
+                onClick={() => openLightbox({ src: moment.image, alt: moment.title })}
+              />
+              <div>
+                <h3>{moment.title}</h3>
+                <p>{moment.details}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section-block">
+        <div className="section-heading">
+          <span>Full gallery</span>
+          <h2>Every frame from Ruhuna life</h2>
+        </div>
+        <div className="uni-gallery-grid">
+          {gallery.map((item) => (
+            <figure key={item.src}>
+              <img
+                src={item.src}
+                alt={item.label}
+                className="lightbox-trigger"
+                onClick={() => openLightbox({ src: item.src, alt: item.label })}
+              />
+              <figcaption>{item.label}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }
 
 export default UniversityLife;
-
-//

@@ -1,69 +1,157 @@
-.gallery-container {
-  margin-top: 10rem; /* Add extra space to avoid navbar overlap */
-  justify-content: center; /* Center the gallery on the screen */
-  align-items: center;
-  height: 80vh; /* Ensure the container takes full height */
+.uni-page {
   display: flex;
+  flex-direction: column;
+  gap: clamp(3rem, 8vw, 5rem);
 }
-  
-  .image-wrapper {
-    position: relative;
-    width: 100%;
-    max-width: 600px;
-  }
-  
-  .gallery-image {
-    width: 100%;
-    border-radius: 8px;
-    border: groove black;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  }
-  
-  .prev-button, .next-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    font-size: 1.5rem;
-    border: none;
-    padding: 8px;
-    cursor: pointer;
-  }
-  
-  .prev-button {
-    left: 0;
-  }
-  
-  .next-button {
-    right: 0;
-  }
-  
-  .caption {
-    margin-top: 0.25rem;
-    font-size: 2rem;
-    color:cornsilk;
-    text-align: center;
-  }
-  
 
-  @media (max-width: 768px) {
-    .gallery-container {
-      margin-top: 10rem; /* Add extra space to avoid navbar overlap */
-      justify-content: center; /* Center the gallery on the screen */
-      align-items: center;
-      height: 100vh; /* Ensure the container takes full height */
-      display: flex;
-    }
-  
-    .image-wrapper {
-      width: 90%; /* Adjust the size for mobile */
-      max-width: 500px; /* Ensure image fits */
-    }
-  
-    .caption {
-      font-size: 1.5rem; /* Adjust caption size for mobile */
-      color: cornsilk;
-      text-align: center;
-    }
+.uni-hero {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: clamp(1.5rem, 3vw, 3rem);
+  align-items: center;
+}
+
+.uni-hero-media {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+
+.uni-hero-media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(1.1);
+}
+
+.uni-hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  background: linear-gradient(135deg, rgba(5, 9, 20, 0.55), rgba(5, 9, 20, 0.35));
+}
+
+.uni-hero-overlay img {
+  width: 240px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: var(--shadow-soft);
+}
+
+.uni-hero-overlay button {
+  border: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.uni-highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.uni-story-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.uni-story-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
+.uni-story-card h3 {
+  margin: 0;
+}
+
+.uni-story-card p {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+.uni-culture-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.uni-culture-grid article {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.uni-culture-grid img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
+.uni-gallery-grid {
+  columns: 4;
+  column-gap: 1rem;
+}
+
+.uni-gallery-grid figure {
+  break-inside: avoid;
+  margin: 0 0 1rem;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+
+.uni-gallery-grid img {
+  width: 100%;
+  display: block;
+}
+
+.uni-gallery-grid figcaption {
+  padding: 0.75rem 1rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 1100px) {
+  .uni-gallery-grid {
+    columns: 3;
   }
+}
+
+@media (max-width: 768px) {
+  .uni-gallery-grid {
+    columns: 2;
+  }
+
+  .uni-hero-overlay {
+    gap: 0.5rem;
+  }
+
+  .uni-hero-overlay img {
+    width: 160px;
+    height: 220px;
+  }
+}
+
+@media (max-width: 520px) {
+  .uni-gallery-grid {
+    columns: 1;
+  }
+}
